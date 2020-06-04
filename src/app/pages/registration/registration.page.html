@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title (click)="fakeLogin()">Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <ion-input value="Email"></ion-input> -->
+    <ion-item>
+        <ion-label position="stacked">Email <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" [(ngModel)]="loginData.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Password <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="password" [(ngModel)]="loginData.password" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label position="stacked">Nickname <ion-text color="danger">*</ion-text></ion-label>
+          <ion-input required  [(ngModel)]="loginData.nickname" ></ion-input>
+        </ion-item>
+
+      <div class="ion-padding">
+          <ion-button (click)="signUp()" expand="block" type="submit" class="ion-no-margin">Sign Up </ion-button>
+        </div>
+        {{loginData | json }}
+    
+
+
+</ion-content>

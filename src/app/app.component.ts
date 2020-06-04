@@ -43,6 +43,6 @@ export class AppComponent {
   }
 
   public logout() {
-    
+    // Logout function
   }
 }

@@ -4,17 +4,26 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'registration',
     pathMatch: 'full'
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './pages/home/home.module#HomePageModule'
   },
   {
     path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' }
+    loadChildren: './pages/list/list.module#ListPageModule'
+  },
+  {
+    path: 'settings',
+    loadChildren: './pages/settings/settings.module#SettingsPageModule' },
+  {
+    path: 'login',
+    loadChildren: './pages/login/login.module#LoginPageModule' },
+  {
+    path: 'registration',
+    loadChildren: './pages/registration/registration.module#RegistrationPageModule' }
 
 ];
 
