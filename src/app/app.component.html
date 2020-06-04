@@ -1,0 +1,37 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu type="overlay">
+      <ion-header>
+        
+        <ion-toolbar>
+            <ion-avatar class="ava-center">
+              <!-- <img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light'/> -->
+              <ion-icon src="/assets/icon/user-man.svg" size="large"></ion-icon>
+            </ion-avatar>
+          <ion-title class="ava-center-name">Nejton Allgreeen</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+              <ion-item (click)="logout()" >
+                <ion-icon slot="start" [name]="log-out"></ion-icon>
+                <ion-label>
+                    Sign out
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
